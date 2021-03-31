@@ -53,6 +53,9 @@ namespace Calculator
             this.buttonZerroNumber = new System.Windows.Forms.Button();
             this.buttonEqually = new System.Windows.Forms.Button();
             this.groupBox = new System.Windows.Forms.GroupBox();
+            this.textBoxFirstNumber = new System.Windows.Forms.TextBox();
+            this.textBoxSymbol = new System.Windows.Forms.TextBox();
+            this.textBoxSecondNumber = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWaiting)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInput)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxError)).BeginInit();
@@ -364,6 +367,42 @@ namespace Calculator
             this.groupBox.TabIndex = 23;
             this.groupBox.TabStop = false;
             // 
+            // textBoxFirstNumber
+            // 
+            this.textBoxFirstNumber.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.textBoxFirstNumber.Font = new System.Drawing.Font("Tele-Marines", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxFirstNumber.ForeColor = System.Drawing.SystemColors.Window;
+            this.textBoxFirstNumber.Location = new System.Drawing.Point(237, 39);
+            this.textBoxFirstNumber.Name = "textBoxFirstNumber";
+            this.textBoxFirstNumber.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.textBoxFirstNumber.Size = new System.Drawing.Size(77, 27);
+            this.textBoxFirstNumber.TabIndex = 24;
+            this.textBoxFirstNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxSymbol
+            // 
+            this.textBoxSymbol.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.textBoxSymbol.Font = new System.Drawing.Font("Tele-Marines", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxSymbol.ForeColor = System.Drawing.SystemColors.Window;
+            this.textBoxSymbol.Location = new System.Drawing.Point(320, 39);
+            this.textBoxSymbol.Name = "textBoxSymbol";
+            this.textBoxSymbol.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.textBoxSymbol.Size = new System.Drawing.Size(40, 37);
+            this.textBoxSymbol.TabIndex = 26;
+            this.textBoxSymbol.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxSecondNumber
+            // 
+            this.textBoxSecondNumber.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.textBoxSecondNumber.Font = new System.Drawing.Font("Tele-Marines", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxSecondNumber.ForeColor = System.Drawing.SystemColors.Window;
+            this.textBoxSecondNumber.Location = new System.Drawing.Point(366, 39);
+            this.textBoxSecondNumber.Name = "textBoxSecondNumber";
+            this.textBoxSecondNumber.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.textBoxSecondNumber.Size = new System.Drawing.Size(77, 27);
+            this.textBoxSecondNumber.TabIndex = 27;
+            this.textBoxSecondNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -373,6 +412,9 @@ namespace Calculator
             this.BackColor = System.Drawing.Color.Silver;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(699, 506);
+            this.Controls.Add(this.textBoxSecondNumber);
+            this.Controls.Add(this.textBoxSymbol);
+            this.Controls.Add(this.textBoxFirstNumber);
             this.Controls.Add(this.groupBox);
             this.Controls.Add(this.pictureBoxResult);
             this.Controls.Add(this.pictureBoxError);
@@ -419,6 +461,9 @@ namespace Calculator
         private System.Windows.Forms.Button buttonZerroNumber;
         private System.Windows.Forms.Button buttonEqually;
         private System.Windows.Forms.GroupBox groupBox;
+        private System.Windows.Forms.TextBox textBoxFirstNumber;
+        private System.Windows.Forms.TextBox textBoxSymbol;
+        private System.Windows.Forms.TextBox textBoxSecondNumber;
     }
 }
 

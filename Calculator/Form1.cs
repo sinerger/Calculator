@@ -46,10 +46,7 @@ namespace Calculator
                     break;
             }
             _firstNumberValue = result.ToString();
-        }
-        private void Error()
-        {
-            throw new NotImplementedException();
+            textBox.Text = _firstNumberValue;
         }
         private void ButtonNumeric_Click(object sender, EventArgs e)
         {
@@ -63,14 +60,8 @@ namespace Calculator
                 }
                 else
                 {
-                    textBox.Text = string.Empty;
                     textBox.Text += button.Text;
                     _secondNumberValue = textBox.Text;
-                    if (!isSecondNull)
-                    {
-                        Calculate(_firstNumberValue, _symbolValue, _secondNumberValue);
-                        textBox.Text = _firstNumberValue;
-                    }
                 }
             }
         }
@@ -80,15 +71,26 @@ namespace Calculator
             {
                 Button button = (Button)sender;
                 _symbolValue = button.Text;
-                if (isSecondNull)
+                textBoxSymbol.Text = _symbolValue;
+                if (!isFirstNull)
                 {
+                    textBox.Text = string.Empty;
+                    isSecondNull = isSecondNull ? false : true;
+                    Calculate(_firstNumberValue, _symbolValue, _secondNumberValue);
+                    textBoxSecondNumber.Text = _secondNumberValue;
                     isFirstNull = isFirstNull ? false : true;
                 }
-                else if (!isFirstNull)
+                else
                 {
-                    isSecondNull = isSecondNull ? false : true;
+                    textBox.Text = string.Empty;
+                    isFirstNull = isFirstNull ? false : true;
+                    textBoxFirstNumber.Text = _firstNumberValue;
                 }
             }
+        }
+        private void Error()
+        {
+            throw new NotImplementedException();
         }
     }
 }
