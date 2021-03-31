@@ -48,14 +48,11 @@ namespace Calculator
             this.buttonThreeNumber = new System.Windows.Forms.Button();
             this.buttonMinus = new System.Windows.Forms.Button();
             this.buttonClear = new System.Windows.Forms.Button();
-            this.buttonComma = new System.Windows.Forms.Button();
+            this.buttonPoint = new System.Windows.Forms.Button();
             this.buttonPlus = new System.Windows.Forms.Button();
             this.buttonZerroNumber = new System.Windows.Forms.Button();
             this.buttonEqually = new System.Windows.Forms.Button();
             this.groupBox = new System.Windows.Forms.GroupBox();
-            this.textBoxFirstNumber = new System.Windows.Forms.TextBox();
-            this.textBoxSymbol = new System.Windows.Forms.TextBox();
-            this.textBoxSecondNumber = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWaiting)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInput)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxError)).BeginInit();
@@ -66,12 +63,13 @@ namespace Calculator
             // textBox
             // 
             this.textBox.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.textBox.Font = new System.Drawing.Font("Tele-Marines", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox.Enabled = false;
+            this.textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox.ForeColor = System.Drawing.SystemColors.Window;
             this.textBox.Location = new System.Drawing.Point(237, 103);
             this.textBox.Name = "textBox";
             this.textBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBox.Size = new System.Drawing.Size(206, 37);
+            this.textBox.Size = new System.Drawing.Size(206, 44);
             this.textBox.TabIndex = 0;
             this.textBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -125,7 +123,7 @@ namespace Calculator
             // buttonSevenNumber
             // 
             this.buttonSevenNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.buttonSevenNumber.Font = new System.Drawing.Font("Tele-Marines", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSevenNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSevenNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.buttonSevenNumber.Location = new System.Drawing.Point(119, 19);
             this.buttonSevenNumber.Name = "buttonSevenNumber";
@@ -138,7 +136,7 @@ namespace Calculator
             // buttonEightNumber
             // 
             this.buttonEightNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.buttonEightNumber.Font = new System.Drawing.Font("Tele-Marines", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonEightNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonEightNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.buttonEightNumber.Location = new System.Drawing.Point(225, 19);
             this.buttonEightNumber.Name = "buttonEightNumber";
@@ -151,7 +149,7 @@ namespace Calculator
             // buttonNineNumber
             // 
             this.buttonNineNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.buttonNineNumber.Font = new System.Drawing.Font("Tele-Marines", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonNineNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonNineNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.buttonNineNumber.Location = new System.Drawing.Point(331, 19);
             this.buttonNineNumber.Name = "buttonNineNumber";
@@ -164,7 +162,7 @@ namespace Calculator
             // buttonDivision
             // 
             this.buttonDivision.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.buttonDivision.Font = new System.Drawing.Font("Tele-Marines", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDivision.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDivision.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.buttonDivision.Location = new System.Drawing.Point(437, 19);
             this.buttonDivision.Name = "buttonDivision";
@@ -172,12 +170,12 @@ namespace Calculator
             this.buttonDivision.TabIndex = 3;
             this.buttonDivision.Text = "÷";
             this.buttonDivision.UseVisualStyleBackColor = false;
-            this.buttonDivision.Click += new System.EventHandler(this.ButtonSymbol_Click);
+            this.buttonDivision.Click += new System.EventHandler(this.ButtonOperator_Click);
             // 
             // buttonFourNumber
             // 
             this.buttonFourNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.buttonFourNumber.Font = new System.Drawing.Font("Tele-Marines", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonFourNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonFourNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.buttonFourNumber.Location = new System.Drawing.Point(119, 75);
             this.buttonFourNumber.Name = "buttonFourNumber";
@@ -190,7 +188,7 @@ namespace Calculator
             // buttonFiveNumber
             // 
             this.buttonFiveNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.buttonFiveNumber.Font = new System.Drawing.Font("Tele-Marines", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonFiveNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonFiveNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.buttonFiveNumber.Location = new System.Drawing.Point(225, 75);
             this.buttonFiveNumber.Name = "buttonFiveNumber";
@@ -203,7 +201,7 @@ namespace Calculator
             // buttonSixNumber
             // 
             this.buttonSixNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.buttonSixNumber.Font = new System.Drawing.Font("Tele-Marines", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSixNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSixNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.buttonSixNumber.Location = new System.Drawing.Point(331, 75);
             this.buttonSixNumber.Name = "buttonSixNumber";
@@ -216,7 +214,7 @@ namespace Calculator
             // buttonMultiplication
             // 
             this.buttonMultiplication.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.buttonMultiplication.Font = new System.Drawing.Font("Tele-Marines", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonMultiplication.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonMultiplication.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.buttonMultiplication.Location = new System.Drawing.Point(437, 75);
             this.buttonMultiplication.Name = "buttonMultiplication";
@@ -224,12 +222,12 @@ namespace Calculator
             this.buttonMultiplication.TabIndex = 7;
             this.buttonMultiplication.Text = "x";
             this.buttonMultiplication.UseVisualStyleBackColor = false;
-            this.buttonMultiplication.Click += new System.EventHandler(this.ButtonSymbol_Click);
+            this.buttonMultiplication.Click += new System.EventHandler(this.ButtonOperator_Click);
             // 
             // buttonOneNumber
             // 
             this.buttonOneNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.buttonOneNumber.Font = new System.Drawing.Font("Tele-Marines", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonOneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonOneNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.buttonOneNumber.Location = new System.Drawing.Point(119, 131);
             this.buttonOneNumber.Name = "buttonOneNumber";
@@ -242,7 +240,7 @@ namespace Calculator
             // buttonTwoNumber
             // 
             this.buttonTwoNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.buttonTwoNumber.Font = new System.Drawing.Font("Tele-Marines", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTwoNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonTwoNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.buttonTwoNumber.Location = new System.Drawing.Point(225, 131);
             this.buttonTwoNumber.Name = "buttonTwoNumber";
@@ -255,7 +253,7 @@ namespace Calculator
             // buttonThreeNumber
             // 
             this.buttonThreeNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.buttonThreeNumber.Font = new System.Drawing.Font("Tele-Marines", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonThreeNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonThreeNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.buttonThreeNumber.Location = new System.Drawing.Point(331, 131);
             this.buttonThreeNumber.Name = "buttonThreeNumber";
@@ -268,7 +266,7 @@ namespace Calculator
             // buttonMinus
             // 
             this.buttonMinus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.buttonMinus.Font = new System.Drawing.Font("Tele-Marines", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonMinus.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonMinus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.buttonMinus.Location = new System.Drawing.Point(437, 131);
             this.buttonMinus.Name = "buttonMinus";
@@ -276,12 +274,12 @@ namespace Calculator
             this.buttonMinus.TabIndex = 11;
             this.buttonMinus.Text = "-";
             this.buttonMinus.UseVisualStyleBackColor = false;
-            this.buttonMinus.Click += new System.EventHandler(this.ButtonSymbol_Click);
+            this.buttonMinus.Click += new System.EventHandler(this.ButtonOperator_Click);
             // 
             // buttonClear
             // 
             this.buttonClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.buttonClear.Font = new System.Drawing.Font("Tele-Marines", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonClear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.buttonClear.Location = new System.Drawing.Point(119, 187);
             this.buttonClear.Name = "buttonClear";
@@ -289,23 +287,25 @@ namespace Calculator
             this.buttonClear.TabIndex = 12;
             this.buttonClear.Text = "C";
             this.buttonClear.UseVisualStyleBackColor = false;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
-            // buttonComma
+            // buttonPoint
             // 
-            this.buttonComma.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.buttonComma.Font = new System.Drawing.Font("Tele-Marines", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonComma.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.buttonComma.Location = new System.Drawing.Point(331, 187);
-            this.buttonComma.Name = "buttonComma";
-            this.buttonComma.Size = new System.Drawing.Size(100, 50);
-            this.buttonComma.TabIndex = 24;
-            this.buttonComma.Text = ",";
-            this.buttonComma.UseVisualStyleBackColor = false;
+            this.buttonPoint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.buttonPoint.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPoint.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.buttonPoint.Location = new System.Drawing.Point(331, 187);
+            this.buttonPoint.Name = "buttonPoint";
+            this.buttonPoint.Size = new System.Drawing.Size(100, 50);
+            this.buttonPoint.TabIndex = 24;
+            this.buttonPoint.Text = ".";
+            this.buttonPoint.UseVisualStyleBackColor = false;
+            this.buttonPoint.Click += new System.EventHandler(this.buttonComma_Click);
             // 
             // buttonPlus
             // 
             this.buttonPlus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.buttonPlus.Font = new System.Drawing.Font("Tele-Marines", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPlus.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonPlus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.buttonPlus.Location = new System.Drawing.Point(437, 187);
             this.buttonPlus.Name = "buttonPlus";
@@ -313,12 +313,12 @@ namespace Calculator
             this.buttonPlus.TabIndex = 25;
             this.buttonPlus.Text = "+";
             this.buttonPlus.UseVisualStyleBackColor = false;
-            this.buttonPlus.Click += new System.EventHandler(this.ButtonSymbol_Click);
+            this.buttonPlus.Click += new System.EventHandler(this.ButtonOperator_Click);
             // 
             // buttonZerroNumber
             // 
             this.buttonZerroNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.buttonZerroNumber.Font = new System.Drawing.Font("Tele-Marines", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonZerroNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonZerroNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.buttonZerroNumber.Location = new System.Drawing.Point(225, 187);
             this.buttonZerroNumber.Name = "buttonZerroNumber";
@@ -331,7 +331,7 @@ namespace Calculator
             // buttonEqually
             // 
             this.buttonEqually.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.buttonEqually.Font = new System.Drawing.Font("Tele-Marines", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonEqually.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonEqually.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.buttonEqually.Location = new System.Drawing.Point(543, 187);
             this.buttonEqually.Name = "buttonEqually";
@@ -339,6 +339,7 @@ namespace Calculator
             this.buttonEqually.TabIndex = 26;
             this.buttonEqually.Text = "=";
             this.buttonEqually.UseVisualStyleBackColor = false;
+            this.buttonEqually.Click += new System.EventHandler(this.buttonEqually_Click);
             // 
             // groupBox
             // 
@@ -346,7 +347,7 @@ namespace Calculator
             this.groupBox.Controls.Add(this.buttonEqually);
             this.groupBox.Controls.Add(this.buttonZerroNumber);
             this.groupBox.Controls.Add(this.buttonPlus);
-            this.groupBox.Controls.Add(this.buttonComma);
+            this.groupBox.Controls.Add(this.buttonPoint);
             this.groupBox.Controls.Add(this.buttonClear);
             this.groupBox.Controls.Add(this.buttonMinus);
             this.groupBox.Controls.Add(this.buttonThreeNumber);
@@ -360,48 +361,12 @@ namespace Calculator
             this.groupBox.Controls.Add(this.buttonNineNumber);
             this.groupBox.Controls.Add(this.buttonEightNumber);
             this.groupBox.Controls.Add(this.buttonSevenNumber);
-            this.groupBox.Font = new System.Drawing.Font("Tele-Marines", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox.Location = new System.Drawing.Point(12, 259);
             this.groupBox.Name = "groupBox";
             this.groupBox.Size = new System.Drawing.Size(678, 233);
             this.groupBox.TabIndex = 23;
             this.groupBox.TabStop = false;
-            // 
-            // textBoxFirstNumber
-            // 
-            this.textBoxFirstNumber.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.textBoxFirstNumber.Font = new System.Drawing.Font("Tele-Marines", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxFirstNumber.ForeColor = System.Drawing.SystemColors.Window;
-            this.textBoxFirstNumber.Location = new System.Drawing.Point(237, 39);
-            this.textBoxFirstNumber.Name = "textBoxFirstNumber";
-            this.textBoxFirstNumber.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBoxFirstNumber.Size = new System.Drawing.Size(77, 27);
-            this.textBoxFirstNumber.TabIndex = 24;
-            this.textBoxFirstNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBoxSymbol
-            // 
-            this.textBoxSymbol.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.textBoxSymbol.Font = new System.Drawing.Font("Tele-Marines", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSymbol.ForeColor = System.Drawing.SystemColors.Window;
-            this.textBoxSymbol.Location = new System.Drawing.Point(320, 39);
-            this.textBoxSymbol.Name = "textBoxSymbol";
-            this.textBoxSymbol.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBoxSymbol.Size = new System.Drawing.Size(40, 37);
-            this.textBoxSymbol.TabIndex = 26;
-            this.textBoxSymbol.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBoxSecondNumber
-            // 
-            this.textBoxSecondNumber.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.textBoxSecondNumber.Font = new System.Drawing.Font("Tele-Marines", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSecondNumber.ForeColor = System.Drawing.SystemColors.Window;
-            this.textBoxSecondNumber.Location = new System.Drawing.Point(366, 39);
-            this.textBoxSecondNumber.Name = "textBoxSecondNumber";
-            this.textBoxSecondNumber.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBoxSecondNumber.Size = new System.Drawing.Size(77, 27);
-            this.textBoxSecondNumber.TabIndex = 27;
-            this.textBoxSecondNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // Form1
             // 
@@ -412,9 +377,6 @@ namespace Calculator
             this.BackColor = System.Drawing.Color.Silver;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(699, 506);
-            this.Controls.Add(this.textBoxSecondNumber);
-            this.Controls.Add(this.textBoxSymbol);
-            this.Controls.Add(this.textBoxFirstNumber);
             this.Controls.Add(this.groupBox);
             this.Controls.Add(this.pictureBoxResult);
             this.Controls.Add(this.pictureBoxError);
@@ -456,14 +418,11 @@ namespace Calculator
         private System.Windows.Forms.Button buttonThreeNumber;
         private System.Windows.Forms.Button buttonMinus;
         private System.Windows.Forms.Button buttonClear;
-        private System.Windows.Forms.Button buttonComma;
+        private System.Windows.Forms.Button buttonPoint;
         private System.Windows.Forms.Button buttonPlus;
         private System.Windows.Forms.Button buttonZerroNumber;
         private System.Windows.Forms.Button buttonEqually;
         private System.Windows.Forms.GroupBox groupBox;
-        private System.Windows.Forms.TextBox textBoxFirstNumber;
-        private System.Windows.Forms.TextBox textBoxSymbol;
-        private System.Windows.Forms.TextBox textBoxSecondNumber;
     }
 }
 

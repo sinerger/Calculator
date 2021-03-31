@@ -12,85 +12,164 @@ namespace Calculator
 {
     public partial class Form1 : Form
     {
-        private string _firstNumberValue = "0";
-        private string _secondNumberValue = string.Empty;
-        private string _symbolValue = string.Empty;
-        private bool isFirstNull = true;
-        private bool isSecondNull = true;
+        private string _firstValue = string.Empty;
+        private string _secondValue = string.Empty;
+        private string _calcOperator = string.Empty;
+
         public Form1()
         {
             InitializeComponent();
         }
-        private void Calculate(string firstValue, string symbol, string secondValue)
+
+        private string Calculate()
         {
-            double a = Convert.ToDouble(firstValue);
-            double b = Convert.ToDouble(secondValue);
+            double firstValue = Convert.ToDouble(_firstValue);
+            double secondValue = Convert.ToDouble(_secondValue);
             double result = 0;
-            switch (symbol)
+
+            switch (_calcOperator)
             {
                 case "+":
-                    result = a + b;
+                    result = firstValue + secondValue;
                     break;
                 case "-":
-                    result = a - b;
+                    result = firstValue - secondValue;
                     break;
                 case "x":
-                    result = a * b;
+                    result = firstValue * secondValue;
                     break;
                 case "÷":
-                    if (b == 0)
+                    if (secondValue == 0)
                     {
                         Error();
+                        return "Ты чё, дурак?";
                     }
-                    result = a / b;
+                    else
+                    {
+                        result = firstValue / secondValue;
+                    }
+
                     break;
             }
-            _firstNumberValue = result.ToString();
-            textBox.Text = _firstNumberValue;
+
+            return result.ToString();
         }
+
+        private void Error()
+        {
+            buttonClear_Click(null, null);
+            PictureSwitcher(pictureBoxError.Name);
+            textBox.Text = "Ты чё, дурак?";
+        }
+
         private void ButtonNumeric_Click(object sender, EventArgs e)
         {
             if (sender is Button)
             {
+                PictureSwitcher(pictureBoxWaiting.Name);
+
                 Button button = (Button)sender;
-                if (isFirstNull)
+                if (_calcOperator == string.Empty)
                 {
-                    textBox.Text += button.Text;                    
-                    _firstNumberValue = textBox.Text;
+                    textBox.Text += button.Text;
                 }
                 else
                 {
+                    if (textBox.Text.Contains(_calcOperator))
+                    {
+                        textBox.Text = string.Empty;
+                    }
                     textBox.Text += button.Text;
-                    _secondNumberValue = textBox.Text;
                 }
             }
         }
-        private void ButtonSymbol_Click(object sender, EventArgs e)
+
+        private void ButtonOperator_Click(object sender, EventArgs e)
         {
             if (sender is Button)
             {
                 Button button = (Button)sender;
-                _symbolValue = button.Text;
-                textBoxSymbol.Text = _symbolValue;
-                if (!isFirstNull)
+                if (!(_firstValue is null))
                 {
-                    textBox.Text = string.Empty;
-                    isSecondNull = isSecondNull ? false : true;
-                    Calculate(_firstNumberValue, _symbolValue, _secondNumberValue);
-                    textBoxSecondNumber.Text = _secondNumberValue;
-                    isFirstNull = isFirstNull ? false : true;
+                    _firstValue = textBox.Text;
+                    _calcOperator = button.Text;
+                    textBox.Text = button.Text;
                 }
                 else
                 {
-                    textBox.Text = string.Empty;
-                    isFirstNull = isFirstNull ? false : true;
-                    textBoxFirstNumber.Text = _firstNumberValue;
+                    _calcOperator = button.Text;
+                    _secondValue = textBox.Text;
+                    string result = Calculate();
+                    textBox.Text = result;
+                    _secondValue = string.Empty;
+                    _firstValue = result;
                 }
             }
         }
-        private void Error()
+
+        private void buttonEqually_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            _secondValue = textBox.Text;
+            string result = Calculate();
+
+            if (!result.Equals("Ты чё, дурак?"))
+            {
+                textBox.Text = result;
+                _secondValue = string.Empty;
+                _firstValue = result;
+                PictureSwitcher(pictureBoxResult.Name);
+            }
+        }
+
+        private void buttonComma_Click(object sender, EventArgs e)
+        {
+            if ((textBox.Text != string.Empty) && (!textBox.Text.Contains(".")))
+            {
+                textBox.Text += buttonPoint.Text;
+            }
+            else
+            {
+                Error();
+            }
+        }
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            textBox.Text = string.Empty;
+            _firstValue = string.Empty;
+            _secondValue = string.Empty;
+            _calcOperator = string.Empty;
+            PictureSwitcher("Reset");
+        }
+
+        private void PictureSwitcher(string pictureName)
+        {
+            switch (pictureName)
+            {
+                case "pictureBoxWaiting":
+                    pictureBoxWaiting.Visible = true;
+                    pictureBoxResult.Visible = false;
+                    pictureBoxError.Visible = false;
+                    break;
+
+                case "pictureBoxResult":
+                    pictureBoxWaiting.Visible = false;
+                    pictureBoxResult.Visible = true;
+                    pictureBoxError.Visible = false;
+                    break;
+
+                case "pictureBoxError":
+                    pictureBoxWaiting.Visible = false;
+                    pictureBoxResult.Visible = false;
+                    pictureBoxError.Visible = true;
+                    break;
+
+                case "Reset":
+                    pictureBoxWaiting.Visible = false;
+                    pictureBoxResult.Visible = false;
+                    pictureBoxError.Visible = false;
+                    break;
+            }
         }
     }
 }
